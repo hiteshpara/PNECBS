@@ -1,0 +1,66 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - cost_info
+  - Recommend_q
+  - no_recommendn
+  - Recommend
+  - Satisfied
+
+entities:
+  - info
+
+actions:
+  - action_cost  
+  - action_recommendn
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "/media/x.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_RecNeg:
+  - text: "Do you want any recommendation"
+    buttons: 
+      - title: "Yes"
+        payload: "Recommend"
+      - title: "No"
+        payload: "No need of any recommendation"  
+  
+  utter_NoRecommendn:
+  - text: "It's Ok....Carry on"
+
+  utter_deal:
+  - text: "Do you want to finish this deal"
+    buttons: 
+      - title: "Yes"
+        payload: "Take me to the cart"
+      - title: "No"
+        payload: "No, I'm not satisfid" 
+
+session_config:
+  session_expiration_time: 200
+  carry_over_slots_to_new_session: true
+
